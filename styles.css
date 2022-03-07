@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Staatliches&display=swap");
+
+:root {
+  --jet: #2d2d2aff;
+  --davys-grey: #4c4c47ff;
+  --cool-grey: #848fa5ff;
+  --bittersweet-shimmer: #c14953ff;
+  --bone: #e5dcc5ff;
+}
+html {
+  padding: 0;
+}
+body {
+  background-color: var(--jet);
+  color: #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.hero,
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero {
+  text-shadow: 0px 0px 10px black;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Staatliches", cursive;
+}
+
+h1 {
+  font-size: 5vw;
+}
+
+main {
+  display: flex;
+  flex: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40vh;
+}
+
+input {
+  color: var(--bone);
+  padding: 20px;
+  font-size: 20px;
+  width: 30vw;
+  transition: width 0.5s;
+  background-color: var(--davys-grey);
+  border: none;
+  border-bottom: 3px solid var(--bittersweet-shimmer);
+}
+
+input:focus {
+  outline: none;
+  width: 50vw;
+  border: 3px solid var(--bittersweet-shimmer);
+}
+
+#searchresults {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.movie-card {
+  color: white;
+  margin-bottom: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--bone);
+  border-radius: 10px;
+  max-width: 80vw;
+}
+.movie-card img {
+  width: 100px;
+}
+.movie-text {
+  width: 100%;
+  padding-left: 20px;
+  font-family: "Lato", sans-serif;
+}
+.movie-text h3 {
+  font-size: 2em;
+  margin-top: 0;
+}
+.right {
+  text-align: right;
+}
+a.read-more {
+  text-decoration: none;
+  color: white;
+  background-color: var(--cool-grey);
+  border-radius: 3px;
+  padding: 10px;
+}
+
+#synopsis {
+  padding: 20px;
+  max-width: 80vw;
+}
+
+footer {
+  height: 20vh;
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+  .movie-text h3 {
+    font-size: 1.5em;
+  }
+}
