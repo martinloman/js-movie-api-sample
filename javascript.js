@@ -26,15 +26,26 @@ movieSearch.onkeydown = async function (event) {
   för att sedan returnera resultatet från APIet.
  */
 async function doAPISearch(searchString) {
-  var url = `https://api.themoviedb.org/3/search/movie?query=${searchString}&api_key=1a08c634ec1bc9d64558c15c3e88cdbf`
+  try {
+    var url = `https://api.themoviedb.org/3/search/movie?query=${searchString}&api_key=1a08c634ec1bc9d64558c15c3e88cdbf`
+    let response = await fetch(url)
+    let json = await response.json()
+    return json
+  } catch (error) {
+    //Visa ett fint felmeddelande för användaren här.
+    showErrorMessage("Ajdå, något gick fel...  :(")
+  }
+}
 
-  console.log("Getting: " + url)
-
-  // Här gör anropet till APIet. Det svaret måste man vänta på med await.
-  let response = await fetch(url)
-
-  let json = await response.json()
-  return json
+function showErrorMessage(message) {
+  let errorDiv = document.getElementById("errorDiv")
+  if (message) {
+    console.log("showing", message)
+    errorDiv.classList.remove("hidden")
+    errorDiv.innerText = message
+  } else {
+    errorDiv.classList.add("hidden")
+  }
 }
 
 /*

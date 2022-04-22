@@ -43,6 +43,22 @@ h1 {
   font-size: 5vw;
 }
 
+.hidden {
+  display: none;
+}
+
+.message {
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+.error {
+  background-color: var(--bittersweet-shimmer);
+  color: white;
+}
+
 main {
   display: flex;
   flex: 100%;
